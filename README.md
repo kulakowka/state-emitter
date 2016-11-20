@@ -46,7 +46,7 @@ npm start
 
 ```javascript
 import React, { Component } from 'react'
-import StateEmitter from 'state-emitter'
+import StateEmitter from 'stateemitter'
 
 // Create store
 const store = new StateEmitter()
