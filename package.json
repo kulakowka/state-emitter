@@ -1,6 +1,6 @@
 {
   "name": "state-emitter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Control application state with events",
   "scripts": {
     "prepublish": "npm run compile",
