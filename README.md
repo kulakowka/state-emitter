@@ -1,5 +1,11 @@
 # State Emitter
 
+[![npm package](https://nodei.co/npm/stateemitter.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/stateemitter/)
+
+[![NPM version](http://img.shields.io/npm/v/stateemitter.svg)](https://www.npmjs.org/package/stateemitter)
+[![Dependency Status](https://david-dm.org/kulakowka/state-emitter.svg)](https://david-dm.org/kulakowka/state-emitter)
+
+
 Control application state with events.
 
 #### Install
