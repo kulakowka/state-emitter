@@ -1,5 +1,9 @@
-# Directory with compiled library
-lib
+# Directory and files for current repo
+example
+src
+test
+.babelrc
+.npmignore
 
 # Logs
 logs

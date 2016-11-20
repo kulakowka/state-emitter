@@ -1,0 +1,46 @@
+{
+  "name": "state-emitter",
+  "version": "1.0.0",
+  "description": "Control application state with events",
+  "scripts": {
+    "prepublish": "npm run compile",
+    "publish": "git push origin && git push origin --tags",
+    "release:patch": "npm version patch && npm publish",
+    "release:minor": "npm version minor && npm publish",
+    "release:major": "npm version major && npm publish",
+    "compile": "rm -rf lib/ && babel -d lib/ src/",
+    "watch": "babel --watch -d lib/ src/"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-es2015": "^6.18.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kulakowka/state-emitter.git"
+  },
+  "directories": {
+    "example": "example",
+    "lib": "lib"
+  },
+  "engines": {
+    "node": ">= 6.7.0",
+    "npm": ">= 3.10.3"
+  },
+  "main": "lib/index",
+  "keywords": [
+    "state",
+    "emitter",
+    "events",
+    "stateemitter",
+    "stateemitter.js",
+    "state-emitter",
+    "state-emitter.js"
+  ],
+  "author": "Anton Kulakov <kulakowka@gmail.com> (http://kulakowka.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kulakowka/state-emitter/issues"
+  },
+  "homepage": "https://github.com/kulakowka/state-emitter#readme"
+}
