@@ -94,3 +94,63 @@ class StateEmitterExample extends Component {
   }
 }
 ```
+
+#### Control state with simple Event Emitter
+
+```javascript
+// import standart node.js package
+const EventEmitter = require('events')
+
+// import react.js
+const React, { Component } = require('react')
+
+// Create store instance with Event Emitter
+const store = new EventEmitter()
+
+// Add event listener for replace state
+store.on('change', state => {
+  store.state = state
+})
+
+// Add event listeners for actions
+store.on('increment', state => store.emit('change', { counter: store.state.counter + 1 }))
+store.on('decrement', state => store.emit('change', { counter: store.state.counter - 1 }))
+
+// Add logger
+store.on('change', state => console.log('store state changed:', state))
+
+// Create initial state
+store.state = {
+  counter: 0
+}
+
+// Emit actions
+store.emit('increment') // => store.state = { counter: 1 }
+store.emit('decrement') // => store.state = { counter: 0 }
+
+// Create react component
+class Example extends Component {
+  constructor () {
+    super()
+    this.state = store.state
+  }
+
+  componentDidMount () {
+    // subscribe to state changes
+    store.on('change', state => this.setState(state))
+  }
+
+  render () {
+    const counter = this.state && this.state.counter
+
+    return (
+      <div>
+        <h1>counter: {counter}</h1>
+
+        <button onClick={event => store.emit('increment')} >+</button>
+        <button onClick={event => store.emit('decrement')} >-</button>
+      </div>
+    )
+  }
+}
+```
